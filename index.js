@@ -130,7 +130,7 @@ export default class BaconCard extends Component {
           uri: photo
         }} 
         onPress={ this.openAlbum } 
-        placeholderSource={require('./images/ico_qy_head_preload.png')}
+        placeholderSource={require('./Images/ico_qy_head_preload.png')}
         loadingStyle={ styles.loadingStyle }
         />
       ))
@@ -188,10 +188,10 @@ export default class BaconCard extends Component {
             </Carousel>
             <View style={styles.toolView}>
               <TouchableOpacity onPress={ this.closeAlbum }>
-                <Image source={require('./images/btn_meet_main.png')} />
+                <Image source={require('./Images/btn_meet_main.png')} />
               </TouchableOpacity>
               <TouchableOpacity onPress={ this.nextPhoto }>
-                <Image source={require('./images/btn_meet_nextpic.png')}/>
+                <Image source={require('./Images/btn_meet_nextpic.png')}/>
               </TouchableOpacity>
             </View>
           </Modal>
@@ -212,7 +212,7 @@ export default class BaconCard extends Component {
 
         <ScrollView style={styles.info}>
           <View style={styles.nameAgeView}>
-            <Image style={styles.icon} source={verityEmail ? require('./images/ico_meet_email_1.png') : require('./images/ico_aboutme_mail_0.png')}/>
+            <Image style={styles.icon} source={verityEmail ? require('./Images/ico_meet_email_1.png') : require('./Images/ico_aboutme_mail_0.png')}/>
             <Text style={styles.nameAge}>{ displayName || 'NULL' }</Text>
             <Text style={styles.nameAge}>，</Text>
             <Text style={styles.nameAge}>{ age || 'NULL' }</Text>
@@ -224,31 +224,31 @@ export default class BaconCard extends Component {
 
           { showDistance &&
             <View style={styles.distanceView}>
-              <Image style={styles.icon} source={require('./images/ico_meet_locate.png')}/>
+              <Image style={styles.icon} source={require('./Images/ico_meet_locate.png')}/>
               <Text style={styles.text}>你們距離大約 { distance || 'NULL' } 公里</Text>
             </View>
           }
 
           <View style={styles.addressView}>
-            <Image style={styles.icon} source={require('./images/ico_meet_city.png')}/>
+            <Image style={styles.icon} source={require('./Images/ico_meet_city.png')}/>
             <Text style={styles.text}>{ address || 'NULL' }</Text>
           </View>
 
           <View style={styles.langsView}>
-            <Image style={styles.icon} source={require('./images/ico_meet_globe.png')}/>
+            <Image style={styles.icon} source={require('./Images/ico_meet_globe.png')}/>
             <Text style={styles.text}>{ langs || 'NULL' }</Text>
           </View>
 
           { showReport &&
           <TouchableOpacity style={styles.reportView} onPress={onPressReport}>
-            <Image style={styles.icon} source={require('./images/btn_meet_block.png')}/>
+            <Image style={styles.icon} source={require('./Images/btn_meet_block.png')}/>
             <Text style={styles.text}>檢舉</Text>
           </TouchableOpacity>
           }
 
           { showBlockade &&
           <TouchableOpacity style={styles.blockadeView} onPress={onPrssBlockade}>
-            <Image style={styles.icon} source={require('./images/btn_meet_block.png')}/>
+            <Image style={styles.icon} source={require('./Images/btn_meet_block.png')}/>
             <Text style={styles.text}>封鎖此人</Text>
           </TouchableOpacity>
           }
