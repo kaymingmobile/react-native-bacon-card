@@ -184,7 +184,7 @@ export default class BaconCard extends Component {
               autoplay={false}
               bulletsStyle={styles.bulletsStyle}
             >
-              { this.renderAlbumZoom(album) }
+              { this.renderAlbumZoom(album || ['https://firebasestorage.googleapis.com/v0/b/bacon-fake.appspot.com/o/ico_qy_head_preload.png?alt=media&token=1dc7adf5-465b-4233-aaa6-d8e0883e96aa']) }
             </Carousel>
             <View style={styles.toolView}>
               <TouchableOpacity onPress={ this.closeAlbum }>
@@ -207,7 +207,7 @@ export default class BaconCard extends Component {
           bulletsContainerPosition={styles.bulletsContainerPosition}
           bulletsStyle={styles.bulletsStyle}
         >
-          { this.renderAlbum(album) }
+          { this.renderAlbum(album || ['https://firebasestorage.googleapis.com/v0/b/bacon-fake.appspot.com/o/ico_qy_head_preload.png?alt=media&token=1dc7adf5-465b-4233-aaa6-d8e0883e96aa']) }
         </Carousel>
 
         <ScrollView style={styles.info}>
