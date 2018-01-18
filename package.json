@@ -1,0 +1,28 @@
+{
+  "name": "react-native-bacon-card",
+  "version": "1.0.0",
+  "description": "react native bacon card",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kaymingmobile/react-native-bacon-card.git"
+  },
+  "dependencies": {
+    "prop-types": "^15.5.10",
+    "react-native-image-pan-zoom": "^2.0.0",
+    "react-native-bacon-square-image": "kaymingmobile/react-native-bacon-square-image#master",
+    "react-native-looped-carousel": "kaymingmobile/react-native-looped-carousel#master"
+  },
+  "keywords": [
+    "react native card"
+  ],
+  "author": "Tsao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kaymingmobile/react-native-bacon-card/issues"
+  },
+  "homepage": "https://github.com/kaymingmobile/react-native-bacon-card#readme"
+}
