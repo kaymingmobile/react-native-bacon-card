@@ -3,14 +3,14 @@ import { View, Image, Text, TouchableOpacity, Dimensions, ScrollView, Platform, 
 import Carousel from 'react-native-looped-carousel'
 import SquareImage from 'react-native-bacon-square-image'
 import ImageZoom from 'react-native-image-pan-zoom'
+import { BaconBadgeYes } from 'react-native-bacon-badge'
 
 const { width, height } = Dimensions.get('window')
 
 const styles = {
   view: {
     backgroundColor: 'white',
-    width,
-    height: height - ( Platform.OS === 'ios' ? 64 : 54 )
+    width
   },
   carousel: { 
     backgroundColor: 'white',
@@ -106,6 +106,13 @@ const styles = {
   bulletsStyle: {
     position: 'absolute',
     top: 10
+  },
+  hobbiesView: {
+    marginTop: 10, 
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    alignSelf: 'center'    
   }
 } 
 
@@ -169,12 +176,16 @@ export default class BaconCard extends Component {
     this.carouselZoom._animateNextPage()
   }
 
+  showBadge = hobbies => (
+    hobbies.map((ele) => (<BaconBadgeYes key={ele.key} text={ele.key}/>))
+  )
+
   render() {
 
-    const { album, verityEmail, verityPhoto, displayName, bio, age, address, langs, distance, showDistance, showBlockade, showReport, onPressReport, onPrssBlockade } = this.props
+    const { album, verityEmail, verityPhoto, displayName, bio, age, address, langs, hobbies, distance, showDistance, showBlockade, showReport, onPressReport, onPrssBlockade, additionHeight } = this.props
 
     return(
-      <View style={styles.view}>
+      <View style={[styles.view,{height: height - ( Platform.OS === 'ios' ? 64 + (additionHeight || 0 ) : 54 + (additionHeight || 0 ))}]}>
           <Modal hardwareAccelerated animationType={'none'} onRequestClose={this.closeAlbum} visible={ this.state.albumZoom || false } transparent={false}>
             <Carousel
               ref={(carousel) => { this.carouselZoom = carousel }}
@@ -237,6 +248,10 @@ export default class BaconCard extends Component {
           <View style={styles.langsView}>
             <Image style={styles.icon} source={require('./Images/ico_meet_globe.png')}/>
             <Text style={styles.text}>{ langs || 'NULL' }</Text>
+          </View>
+
+          <View style={styles.hobbiesView}>
+            { this.showBadge(hobbies || new Array) }
           </View>
 
           { showReport &&
