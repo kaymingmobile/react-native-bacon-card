@@ -256,7 +256,7 @@ export default class BaconCard extends Component {
 
           { showReport &&
           <TouchableOpacity style={styles.reportView} onPress={onPressReport}>
-            <Image style={styles.icon} source={require('./Images/btn_meet_block.png')}/>
+            <Image style={styles.icon} source={require('./Images/2299777-20.png')}/>
             <Text style={styles.text}>檢舉</Text>
           </TouchableOpacity>
           }
