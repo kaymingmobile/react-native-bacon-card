@@ -207,66 +207,70 @@ export default class BaconCard extends Component {
             </View>
           </Modal>
 
+        <ScrollView>
+          <Carousel
+            ref={(carousel) => { this.carousel = carousel }}
+            currentPage={this.currentPage}
+            swipe
+            style={styles.carousel}
+            bullets
+            autoplay={false}
+            bulletsContainerPosition={styles.bulletsContainerPosition}
+            bulletsStyle={styles.bulletsStyle}
+          >
+            { this.renderAlbum(album || ['https://firebasestorage.googleapis.com/v0/b/bacon-fake.appspot.com/o/ico_qy_head_preload.png?alt=media&token=1dc7adf5-465b-4233-aaa6-d8e0883e96aa']) }
+          </Carousel>
 
-        <Carousel
-          ref={(carousel) => { this.carousel = carousel }}
-          currentPage={this.currentPage}
-          swipe
-          style={styles.carousel}
-          bullets
-          autoplay={false}
-          bulletsContainerPosition={styles.bulletsContainerPosition}
-          bulletsStyle={styles.bulletsStyle}
-        >
-          { this.renderAlbum(album || ['https://firebasestorage.googleapis.com/v0/b/bacon-fake.appspot.com/o/ico_qy_head_preload.png?alt=media&token=1dc7adf5-465b-4233-aaa6-d8e0883e96aa']) }
-        </Carousel>
-
-        <ScrollView style={styles.info}>
-          <View style={styles.nameAgeView}>
-            <Image style={styles.icon} source={verityEmail ? require('./Images/ico_meet_email_1.png') : require('./Images/ico_aboutme_mail_0.png')}/>
-            <Text style={styles.nameAge}>{ displayName || 'NULL' }</Text>
-            <Text style={styles.nameAge}>，</Text>
-            <Text style={styles.nameAge}>{ age || 'NULL' }</Text>
-          </View>
-
-          <View style={styles.bioView}>
-            <Text style={styles.text}>{ bio || 'NULL' }</Text>
-          </View>
-
-          { showDistance &&
-            <View style={styles.distanceView}>
-              <Image style={styles.icon} source={require('./Images/ico_meet_locate.png')}/>
-              <Text style={styles.text}>你們距離大約 { distance || 'NULL' } 公里</Text>
+          <View style={styles.info}>
+            <View style={styles.nameAgeView}>
+              <Image style={styles.icon} source={verityEmail ? require('./Images/ico_meet_email_1.png') : require('./Images/ico_aboutme_mail_0.png')}/>
+              <Text style={styles.nameAge}>{ displayName || 'NULL' }</Text>
+              <Text style={styles.nameAge}>，</Text>
+              <Text style={styles.nameAge}>{ age || 'NULL' }</Text>
             </View>
-          }
 
-          <View style={styles.addressView}>
-            <Image style={styles.icon} source={require('./Images/ico_meet_city.png')}/>
-            <Text style={styles.text}>{ address || 'NULL' }</Text>
+            <View style={styles.bioView}>
+              <Text style={styles.text}>{ bio || 'NULL' }</Text>
+            </View>
+
+            { showDistance &&
+              <View style={styles.distanceView}>
+                <Image style={styles.icon} source={require('./Images/ico_meet_locate.png')}/>
+                <Text style={styles.text}>你們距離大約 { distance || 'NULL' } 公里</Text>
+              </View>
+            }
+
+            <View style={styles.addressView}>
+              <Image style={styles.icon} source={require('./Images/ico_meet_city.png')}/>
+              <Text style={styles.text}>{ address || 'NULL' }</Text>
+            </View>
+
+            <View style={styles.langsView}>
+              <Image style={styles.icon} source={require('./Images/ico_meet_globe.png')}/>
+              <Text style={styles.text}>{ langs || 'NULL' }</Text>
+            </View>
+
+            <View style={styles.hobbiesView}>
+              { this.showBadge(hobbies || new Array) }
+            </View>
+
+            { showReport &&
+            <TouchableOpacity style={styles.reportView} onPress={onPressReport}>
+              <Image style={styles.icon} source={require('./Images/2299777-20.png')}/>
+              <Text style={styles.text}>檢舉</Text>
+            </TouchableOpacity>
+            }
+
+            { showBlockade &&
+            <TouchableOpacity style={styles.blockadeView} onPress={onPrssBlockade}>
+              <Image style={styles.icon} source={require('./Images/btn_meet_block.png')}/>
+              <Text style={styles.text}>封鎖此人</Text>
+            </TouchableOpacity>
+            }
           </View>
 
-          <View style={styles.langsView}>
-            <Image style={styles.icon} source={require('./Images/ico_meet_globe.png')}/>
-            <Text style={styles.text}>{ langs || 'NULL' }</Text>
-          </View>
-
-          <View style={styles.hobbiesView}>
-            { this.showBadge(hobbies || new Array) }
-          </View>
-
-          { showReport &&
-          <TouchableOpacity style={styles.reportView} onPress={onPressReport}>
-            <Image style={styles.icon} source={require('./Images/2299777-20.png')}/>
-            <Text style={styles.text}>檢舉</Text>
-          </TouchableOpacity>
-          }
-
-          { showBlockade &&
-          <TouchableOpacity style={styles.blockadeView} onPress={onPrssBlockade}>
-            <Image style={styles.icon} source={require('./Images/btn_meet_block.png')}/>
-            <Text style={styles.text}>封鎖此人</Text>
-          </TouchableOpacity>
-          }
+          {this.props.children}
+          
         </ScrollView>
       </View>
     )
