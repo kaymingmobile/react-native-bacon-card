@@ -4,6 +4,7 @@ import Carousel from 'react-native-looped-carousel'
 import SquareImage from 'react-native-bacon-square-image'
 import ImageZoom from 'react-native-image-pan-zoom'
 import { BaconBadgeYes } from 'react-native-bacon-badge'
+import { Icon } from 'react-native-elements'
 
 const { width, height } = Dimensions.get('window')
 
@@ -256,7 +257,11 @@ export default class BaconCard extends Component {
 
             { showReport &&
             <TouchableOpacity style={styles.reportView} onPress={onPressReport}>
-              <Image style={styles.icon} source={require('./Images/2299777-20.png')}/>
+              <Icon
+                name='error'
+                type='material-icons'
+                color='#d63768'
+              />
               <Text style={styles.text}>檢舉</Text>
             </TouchableOpacity>
             }

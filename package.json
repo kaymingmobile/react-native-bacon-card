@@ -15,7 +15,9 @@
     "react-native-image-pan-zoom": "^2.0.0",
     "react-native-bacon-square-image": "kaymingmobile/react-native-bacon-square-image#master",
     "react-native-looped-carousel": "kaymingmobile/react-native-looped-carousel#master",
-    "react-native-bacon-badge": "kaymingmobile/react-native-bacon-badge#master"
+    "react-native-bacon-badge": "kaymingmobile/react-native-bacon-badge#master",
+    "react-native-elements": "0.18.5",
+    "react-native-vector-icons": "4.4.2"
   },
   "keywords": [
     "react native card"
