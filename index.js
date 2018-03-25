@@ -225,30 +225,30 @@ export default class BaconCard extends Component {
           <View style={styles.info}>
             <View style={styles.nameAgeView}>
               <Image style={styles.icon} source={verityEmail ? require('./Images/ico_meet_email_1.png') : require('./Images/ico_aboutme_mail_0.png')}/>
-              <Text style={styles.nameAge}>{ displayName || 'NULL' }</Text>
+              <Text style={styles.nameAge}>{ displayName || ' ' }</Text>
               <Text style={styles.nameAge}>，</Text>
-              <Text style={styles.nameAge}>{ age || 'NULL' }</Text>
+              <Text style={styles.nameAge}>{ age || ' ' }</Text>
             </View>
 
             <View style={styles.bioView}>
-              <Text style={styles.text}>{ bio || 'NULL' }</Text>
+              <Text style={styles.text}>{ bio || ' ' }</Text>
             </View>
 
             { showDistance &&
               <View style={styles.distanceView}>
                 <Image style={styles.icon} source={require('./Images/ico_meet_locate.png')}/>
-                <Text style={styles.text}>你們距離大約 { distance || 'NULL' } 公里</Text>
+                <Text style={styles.text}>你們距離大約 { distance || ' ' } 公里</Text>
               </View>
             }
 
             <View style={styles.addressView}>
               <Image style={styles.icon} source={require('./Images/ico_meet_city.png')}/>
-              <Text style={styles.text}>{ address || 'NULL' }</Text>
+              <Text style={styles.text}>{ address || ' ' }</Text>
             </View>
 
             <View style={styles.langsView}>
               <Image style={styles.icon} source={require('./Images/ico_meet_globe.png')}/>
-              <Text style={styles.text}>{ langs || 'NULL' }</Text>
+              <Text style={styles.text}>{ langs || ' ' }</Text>
             </View>
 
             <View style={styles.hobbiesView}>
